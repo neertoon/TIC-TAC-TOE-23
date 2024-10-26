@@ -19,7 +19,9 @@ export default function GameBoard({ onSelectSquare, turns }) {
     let gameBoard = initialGameBoard;
 
     for (const turn of turns) {
-        gameBoard[turn.square.row][turn.square.col] = turn.player;
+        const { square, player } = turn;
+        const { row, col } = square;
+        gameBoard[row][col] = player;
     }
 
     return (
